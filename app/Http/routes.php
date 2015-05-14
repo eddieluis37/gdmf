@@ -19,3 +19,26 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+/*
+Route::resource('productors', 'ProductorController') ;
+
+Route::get('productors/{id}/delete', [
+    'as' => 'productors.delete',
+    'uses' => 'ProductorController@destroy',
+]);
+*/
+
+
+
+
+// Grupo de rutas que requieren autenticación.
+
+$router->group(['middleware' => 'auth'], function() {
+
+    Route::resource('productors', 'ProductorController') ;
+    Route::get('productors/{id}/delete', [
+        'as' => 'productors.delete',
+        'uses' => 'ProductorController@destroy',]);
+
+});

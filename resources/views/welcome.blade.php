@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>Bienvenidos a Guías</title>
 		
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
@@ -40,8 +40,22 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="title">Guias de Movilización de Frutas</div>
+
+                        <canvas id="myCanvas" width="655" height="600"></canvas>
+                            <script>
+                              var canvas = document.getElementById('myCanvas');
+                              var context = canvas.getContext('2d');
+                              var imageObj = new Image();
+
+                              imageObj.onload = function() {
+                                context.drawImage(imageObj, 69, 50);
+                              };
+                              imageObj.src = 'frutas-y-verduras-vida.jpg';
+                            </script>
+
+                 <div class="quote">{{ Inspiring::quote() }}</div>
+
 			</div>
 		</div>
 	</body>
