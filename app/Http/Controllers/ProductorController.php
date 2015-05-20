@@ -53,7 +53,7 @@ class ProductorController extends AppBaseController
 
 		$productor = $this->productorRepository->store($input);
 
-		Flash::message('Productor saved successfully.');
+		Flash::message('Productor guardado exitosamente.');
 
 		return redirect(route('productors.index'));
 	}
@@ -90,7 +90,7 @@ class ProductorController extends AppBaseController
 
 		if(empty($productor))
 		{
-			Flash::error('Productor not found');
+			Flash::error('Productor no encontrado');
 			return redirect(route('productors.index'));
 		}
 
@@ -117,7 +117,7 @@ class ProductorController extends AppBaseController
 
 		$productor = $this->productorRepository->update($productor, $request->all());
 
-		Flash::message('Productor updated successfully.');
+		Flash::message('Productor actualizado.');
 
 		return redirect(route('productors.index'));
 	}
@@ -135,13 +135,13 @@ class ProductorController extends AppBaseController
 
 		if(empty($productor))
 		{
-			Flash::error('Productor not found');
+			Flash::error('Productor no encontrado');
 			return redirect(route('productors.index'));
 		}
 
 		$productor->delete();
 
-		Flash::message('Productor deleted successfully.');
+		Flash::message('El Productor fue borrado exitosamente.');
 
 		return redirect(route('productors.index'));
 	}

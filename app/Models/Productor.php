@@ -22,7 +22,7 @@ class Productor extends Model
 	];
 
 	public static $rules = [
-	    "name" => "required",
+	    "name" => "required|alpha",
 		"identificacion" => "required|unique:productors",
 		"celular" => "max:10",
 		"email" => "required|unique:productors",
