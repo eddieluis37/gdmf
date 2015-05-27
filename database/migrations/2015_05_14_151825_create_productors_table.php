@@ -17,9 +17,11 @@ class CreateProductorsTable extends Migration
 		{
 			$table->increments('id');
             $table->string('name');
-			$table->string('first_Name')->nullable();
-            $table->string('last_Name')->nullable();
-			$table->string('identificacion')->nullable();
+			$table->string('first_Name')->nullable()->required();
+            $table->string('second_Name')->nullable();
+            $table->string('last_Name')->nullable()->required();
+            $table->string('secondlast_Name')->nullable();
+            $table->string('identificacion')->nullable();
 			$table->string('phone');
 			$table->string('celular');
 			$table->string('email')->unique()->required();

@@ -12,8 +12,11 @@ class Productor extends Model
 	public $timestamps = true;
 
 	public $fillable = [
-	    "name",
-		"identificacion",
+	    "first_Name",
+		"second_Name",
+        "last_Name",
+        "secondlast_Name",
+        "identificacion",
 		"phone",
 		"celular",
 		"email",
@@ -22,7 +25,8 @@ class Productor extends Model
 	];
 
 	public static $rules = [
-	    "name" => "required|alpha",
+	    "first_Name" => "required|alpha",
+        "last_Name"  => "required|alpha",
 		"identificacion" => "required|unique:productors",
 		"celular" => "max:10",
 		"email" => "required|unique:productors",

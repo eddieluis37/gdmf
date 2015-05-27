@@ -4,7 +4,7 @@ use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 
-class UserTableSeeder extends Seeder {
+class AdminTableSeeder extends Seeder {
 
     public function run()
 

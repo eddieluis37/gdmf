@@ -12,21 +12,25 @@ class ProductorTableSeeder extends Seeder {
     $faker = Faker::create();
     for ($i = 0; $i < 100; $i++) {
         $firstName = $faker->firstName;
+        $secondName =$faker->firstNameMale;
         $lastName = $faker->lastName;
+        $secondlastName = $faker->firstNameFemale;
         $id = \DB::table('productors')->insertGetId(array(
             'first_name' => $firstName,
+            'second_name' => $secondName,
             'last_name' => $lastName,
+            'secondlast_Name' => $secondlastName,
             'identificacion' => $faker->ean8,
             'phone' => $faker->phoneNumber,
             'celular' => $faker->phoneNumber,
             'email' => $faker->unique()->email,
             'address' => $faker->randomElement(['editor', 'contributor', 'subscriber', 'user']),
             'asociacion' => $faker->lastName,
-            'name' => "$firstName $lastName"
+            'name' => "$firstName $secondName $lastName $secondlastName"
 
         ));
 
     }
 }
 
- }
+}

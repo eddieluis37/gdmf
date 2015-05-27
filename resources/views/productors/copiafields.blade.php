@@ -1,22 +1,7 @@
 <!--- Name Field --->
 <div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('firstname', 'Primer Nombre:') !!}
-    {!! Form::text('first_Name', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('secondname', 'Segundo Nombre:') !!}
-    {!! Form::text('second_Name', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('lastname', 'Primer apellido:') !!}
-    {!! Form::text('last_Name', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('secondlastname', 'Segundo Apellido:') !!}
-    {!! Form::text('secondlast_Name', null, ['class' => 'form-control']) !!}
+    {!! Form::label('name', 'Nombres y Apellidos:') !!}
+    {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Identificacion Field --->
