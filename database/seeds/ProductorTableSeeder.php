@@ -19,7 +19,7 @@ class ProductorTableSeeder extends Seeder {
             'first_name' => $firstName,
             'second_name' => $secondName,
             'last_name' => $lastName,
-            'secondlast_Name' => $secondlastName,
+            'secondlast_name' => $secondlastName,
             'identificacion' => $faker->ean8,
             'phone' => $faker->phoneNumber,
             'celular' => $faker->phoneNumber,

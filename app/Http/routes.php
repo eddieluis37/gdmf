@@ -24,6 +24,24 @@ Route::controllers([
 /*
 Route::resource('productors', 'ProductorController') ;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('productors/{id}/delete', [
     'as' => 'productors.delete',
     'uses' => 'ProductorController@destroy',

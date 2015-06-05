@@ -33,4 +33,15 @@ class Productor extends Model
 		"address" => "max:300"
 	];
 
+    public function setEmailAttribute($value)
+    {
+
+        if (! empty ($value))
+        {
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
+
+
+
 }

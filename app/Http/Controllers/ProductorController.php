@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Requests\CreateProductorRequest;
 use App\Libraries\Repositories\ProductorRepository;
+use App\Models\Productor;
+use Illuminate\Support\Facades\Validator;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
@@ -49,6 +51,36 @@ class ProductorController extends AppBaseController
 	 */
 	public function store(CreateProductorRequest $request)
 	{
+        $data = Requests::all();
+
+        $rules = array(
+            'first_name' => 'required',
+            'second_name' => 'required',
+            'last_name' => 'required',
+            'secondlast_name' => 'required',
+            'identificacion' => 'required',
+            'phone' => 'required',
+            'celular' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'asociacion' => 'required',
+            'name' => 'required',
+        );
+
+        $v = Validator::make($data, $rules);
+
+        if ($v->fails())
+        {
+           dd ($v->erros());
+            return redirect()->back()
+                ->withErrors($v->erros())
+                ->withInput(Requests::except('name'));
+
+        }
+
+
+        //Validator::make($data, $rules);
+
         $input = $request->all();
 
 		$productor = $this->productorRepository->store($input);
