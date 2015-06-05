@@ -16,6 +16,8 @@ class ProductorTableSeeder extends Seeder {
         $lastName = $faker->lastName;
         $secondlastName = $faker->firstNameFemale;
         $id = \DB::table('productors')->insertGetId(array(
+
+            'full_name' => "$firstName $secondName $lastName $secondlastName",
             'first_name' => $firstName,
             'second_name' => $secondName,
             'last_name' => $lastName,
@@ -25,8 +27,8 @@ class ProductorTableSeeder extends Seeder {
             'celular' => $faker->phoneNumber,
             'email' => $faker->unique()->email,
             'address' => $faker->randomElement(['editor', 'contributor', 'subscriber', 'user']),
-            'asociacion' => $faker->lastName,
-            'name' => "$firstName $secondName $lastName $secondlastName"
+            'asociacion' => $faker->lastName
+
 
         ));
 

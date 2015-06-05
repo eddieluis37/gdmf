@@ -16,7 +16,7 @@ class CreateProductorsTable extends Migration
 		Schema::create('productors', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('name');
+            $table->string('full_Name');
 			$table->string('first_Name')->nullable()->required();
             $table->string('second_Name')->nullable();
             $table->string('last_Name')->nullable()->required();

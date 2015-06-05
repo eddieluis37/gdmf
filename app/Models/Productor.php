@@ -12,7 +12,8 @@ class Productor extends Model
 	public $timestamps = true;
 
 	public $fillable = [
-	    "first_Name",
+	    "full_Name",
+        "first_Name",
 		"second_Name",
         "last_Name",
         "secondlast_Name",
@@ -24,24 +25,12 @@ class Productor extends Model
 		"asociacion"
 	];
 
-	public static $rules = [
-	    "first_Name" => "required|alpha",
-        "last_Name"  => "required|alpha",
-		"identificacion" => "required|unique:productors",
-		"celular" => "max:10",
-		"email" => "required|unique:productors",
-		"address" => "max:300"
-	];
 
-    public function setEmailAttribute($value)
+
+    public function getFullNameAttribute()
     {
-
-        if (! empty ($value))
-        {
-            $this->attributes['password'] = bcrypt($value);
-        }
+        return $this->first_name . ' ' . $this->last_name;
     }
-
 
 
 }

@@ -26,7 +26,6 @@ class CreateUserProfilesTable extends Migration {
                 ->on('users')
                 ->onDelete('cascade');
 
-
             $table->timestamps();
 		});
 	}

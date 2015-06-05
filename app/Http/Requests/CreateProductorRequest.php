@@ -20,9 +20,23 @@ class CreateProductorRequest extends Request {
 	 *
 	 * @return array
 	 */
-	public function rules()
+
+	/*public function rules()
 	{
 		return Productor::$rules;
 	}
+    */
+    public function rules()
+    {
+        return [
+            'first_Name' => 'required|alpha',
+            'last_Name'  => 'required|alpha',
+            'identificacion' => 'required|unique:productors',
+            'celular" => "max:10',
+            'email' => 'required|unique:productors',
+            'address" => "max:300'
+        ];
+    }
+
 
 }
