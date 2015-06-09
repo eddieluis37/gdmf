@@ -53,7 +53,9 @@ class ProductorController extends AppBaseController
 	{
         $input = $request->all();
 
-	    	$productor = $this->productorRepository->store($input);
+            $input["full_Name"] =  $input["first_Name"]." ".$input["second_Name"]." ".$input["last_Name"]." ".$input["secondlast_Name"];
+
+            $productor = $this->productorRepository->store($input);
 
 		    Flash::message('Productor guardado exitosamente.');
 
